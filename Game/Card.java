@@ -8,7 +8,7 @@ public class Card implements CardGameInterface{
     public int numOfPlayers() {
         //allows the user to enter the number of players in the game
         Scanner myObj = new Scanner(System.in);
-        System.out.println("Please Enter the number of players:");
+        System.out.print("Please Enter the number of players: ");
 
         int numOfPlayers = myObj.nextInt();
         myObj.close();
@@ -22,11 +22,10 @@ public class Card implements CardGameInterface{
         //pack would be of size 0, numOfPlayers would be already entered by the user, the while loop will run until pack is valid
         while (pack.size() != numOfPlayers*8) {
             pack.clear();
-            Scanner myObj = new Scanner(System.in);
-            System.out.println("Please Enter location of pack to load");
-
-            String location = myObj.nextLine();
-            myObj.close();
+            Scanner scan = new Scanner(System.in);
+            System.out.print("Please Enter location of pack to load: ");
+            String location = scan.nextLine();
+            scan.close();
             try {
                 File fileObj = new File(location);
                 Scanner myReader = new Scanner(fileObj);
